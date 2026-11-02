@@ -1,63 +1,105 @@
 .home {
-  padding: 2rem 0;
   width: 100%;
+  padding: 1.5rem 0 0;
   box-sizing: border-box;
 }
 
 .search-form {
-  max-width: 600px;
-  margin: 0 auto 2rem;
   display: flex;
-  gap: 1rem;
-  padding: 0 1rem;
-  box-sizing: border-box;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  padding: 0.75rem 0.85rem 0.75rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
 }
 
 .search-input {
   flex: 1;
-  padding: 0.75rem 1rem;
+  min-width: 0;
   border: none;
-  border-radius: 4px;
-  background-color: #333;
-  color: white;
+  background: transparent;
+  color: #f8fafc;
   font-size: 1rem;
+  padding: 0.85rem 0.25rem;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
 }
 
 .search-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #666;
 }
 
 .search-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #e50914;
-  color: white;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
+  box-shadow: 0 14px 24px rgba(220, 38, 38, 0.35);
 }
 
 .search-button:hover {
-  background-color: #f40612;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 28px rgba(220, 38, 38, 0.44);
 }
 
+.loading,
+.error-message {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  text-align: center;
+}
 
-@media (max-width: 639px) {
-  .home {
-    padding: 1rem 0;
-  }
+.loading {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: #cbd5e1;
+}
 
-  .search-form {
-    margin-bottom: 1rem;
-  }
+.error-message {
+  background: rgba(127, 29, 29, 0.18);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  color: #fecaca;
 }
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+  padding: 0.25rem 0;
+}
+
+@media (max-width: 639px) {
+  .home {
+    padding-top: 1rem;
+  }
+
+  .search-form {
+    margin-bottom: 1.25rem;
+    border-radius: 1rem;
+    padding: 0.65rem 0.75rem 0.65rem 0.9rem;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+  }
+
+  .search-button {
+    padding: 0.72rem 1rem;
+  }
 }
